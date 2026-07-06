@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정지훈 포트폴리오 | 사진작가 겸 로컬 아카이버</title>
+    <meta name="description" content="사진작가 겸 여행 크리에이터 정지훈의 B2B 아카이브 포트폴리오입니다. 여행의 기억을 큐레이팅합니다.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300..900;1,300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Noto+Serif+KR:wght@200;300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="museum-theme">
+
+    <!-- Header / Navigation -->
+    <header id="main-header">
+        <div class="header-container">
+            <a href="#" class="logo" id="header-logo">JIHOON JUNG</a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#about" class="nav-link" id="nav-about">소개</a></li>
+                    <li><a href="#gallery-section" class="nav-link" id="nav-gallery">작품첩</a></li>
+                    <li><a href="#philosophy-section" class="nav-link" id="nav-philosophy">기록 철학</a></li>
+                    <li><a href="#offerings-section" class="nav-link" id="nav-offerings">제공 가치</a></li>
+                    <li><a href="#contact-section" class="nav-link" id="nav-contact">협업 문의</a></li>
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.instagram.com/ho.on_foto/" target="_blank" rel="noopener noreferrer" class="instagram-link" id="social-instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" class="icon">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <span>@ho.on_foto</span>
+                </a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="메뉴 열기">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- [Section 1: Hero - Intro] 작가 분할 레이아웃 및 공식 경력 전면 배치 -->
+        <section id="about" class="hero-split-section section-padding">
+            <div class="container hero-editorial-grid">
+                <!-- 좌측 컬럼: 텍스트 및 경력사항 -->
+                <div class="hero-text-col fade-in-up">
+                    <span class="hero-label-tag">PHOTOGRAPHER & LOCAL ARCHIVER</span>
+                    <h1 class="hero-editorial-title">여행의 기억을<br>큐레이팅합니다.</h1>
+                    <p class="hero-editorial-desc">
+                        시선을 멈추게 하는 풍경을 넘어, 그 공간에 머물던 감정과 시간의 흐름을 한 점의 사진에 담아냅니다. 사진작가이자 여행 크리에이터 정지훈입니다.
+                    </p>
+                    
+                    <!-- 공식 주요 경력 전면 배치 -->
+                    <div class="hero-credentials">
+                        <h3>로컬 아카이빙 주요 활동</h3>
+                        <ul class="credentials-list">
+                            <li>
+                                <span class="cred-bullet"></span>
+                                <span class="cred-text">한국관광공사 FRAME KOREA 4기 사진기자</span>
+                            </li>
+                            <li>
+                                <span class="cred-bullet"></span>
+                                <span class="cred-text">내셔널지오그래픽 x 국가유산청 포토크루 2기</span>
+                            </li>
+                            <li>
+                                <span class="cred-bullet"></span>
+                                <span class="cred-text">한국수목원정원관리원 가든크루</span>
+                            </li>
+                            <li>
+                                <span class="cred-bullet"></span>
+                                <span class="cred-text">전라남도 공식 SNS 서포터즈</span>
+                            </li>
+                            <li>
+                                <span class="cred-bullet"></span>
+                                <span class="cred-text">목포시 공식 SNS 서포터즈</span>
+                            </li>
+                            <li>
+                                <span class="cred-bullet"></span>
+                                <span class="cred-text">화순관광 청년PD</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 우측 컬럼: 대형 대표 사진 배치 -->
+                <div class="hero-image-col fade-in-up">
+                    <div class="hero-large-art-print">
+                        <img src="assets/images/slide1.jpg" alt="정지훈 작가 대표 사진" class="hero-art-img" id="hero-signature-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [Section 2: Gallery - Feed Grid] 세로형 3:4 그리드 갤러리 피드 -->
+        <section id="gallery-section" class="gallery-category-section section-padding bg-neutral">
+            <div class="container">
+                <div class="section-header-row">
+                    <div class="section-header-left">
+                        <span class="section-tag">01 / PROJECT</span>
+                        <h2 class="section-title">여행의 기억</h2>
+                        <p class="section-subtitle"><strong>시선을 머물게 하는 로컬 콘텐츠의 시작</strong><br>전국 각지의 로컬 가이드 갤러리입니다. 고품질 비주얼 아카이브를 확인해 보세요.</p>
+                    </div>
+                    
+                    <!-- 관리자 모드 토글 버튼 -->
+                    <div class="admin-control-panel">
+                        <button class="admin-toggle-btn" id="admin-mode-toggle" aria-label="관리자 모드 활성화">
+                            <svg viewBox="0 0 24 24" width="14" height="14" class="admin-icon">
+                                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                            <span>관리자 편집 모드</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 실시간 필터링 탭 바 -->
+                <div class="gallery-filter-tabs">
+                    <button class="filter-tab active" data-filter="all">ALL</button>
+                    <button class="filter-tab" data-filter="landscape">LANDSCAPE & LOCAL</button>
+                    <button class="filter-tab" data-filter="city">CITY & ARCHITECTURE</button>
+                    <button class="filter-tab" data-filter="collaboration">COLLABORATION & DESIGN</button>
+                    <button class="filter-tab" data-filter="space">SPACE & STAY</button>
+                </div>
+                
+                <!-- 3:4 세로 바둑판 그리드 피드 -->
+                <div class="gallery-feed-grid" id="gallery-grid">
+                    <!-- 자바스크립트로 세로형 작품 카드 및 드래그 재정렬 영역이 동적으로 생성됩니다 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 팝업 슬라이더 라이트박스 뷰어 모달 (순수 작품 감상용으로 경량화) -->
+        <div class="gallery-lightbox-modal" id="gallery-lightbox" role="dialog" aria-hidden="true">
+            <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="갤러리 닫기">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="1.5"></line>
+                    <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="1.5"></line>
+                </svg>
+            </button>
+            
+            <div class="lightbox-slider-container">
+                <div class="slider-viewport">
+                    <button class="slider-nav-btn prev-btn" id="slider-prev-btn" aria-label="이전 사진">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <div class="slider-image-box">
+                        <img src="" alt="" id="slider-main-img">
+                    </div>
+                    <button class="slider-nav-btn next-btn" id="slider-next-btn" aria-label="다음 사진">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+                
+                <!-- 슬라이드 하단 캡션 정보 -->
+                <div class="slider-details">
+                    <span class="slider-category" id="slider-cat-title">LANDSCAPE</span>
+                    <h4 class="slider-image-title" id="slider-img-title">사진 제목</h4>
+                    <p class="slider-desc" id="slider-img-desc">상세 설명</p>
+                    <span class="slider-indicator" id="slider-counter">1 / 5</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 관리자 전용 독립형 작품 등록/수정용 팝업 폼 모달 -->
+        <div class="admin-modal-backdrop" id="admin-edit-modal" role="dialog" aria-hidden="true" style="display: none;">
+            <div class="admin-modal-container">
+                <button class="admin-modal-close" id="admin-modal-close" aria-label="닫기">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="1.5"></line>
+                        <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="1.5"></line>
+                    </svg>
+                </button>
+                <h4 class="admin-modal-title" id="admin-modal-title">작품 정보 편집</h4>
+                
+                <div class="admin-edit-panel-body">
+                    <div class="admin-form-group">
+                        <label for="edit-img-category">카테고리 분류</label>
+                        <select id="edit-img-category">
+                            <option value="landscape">자연 & 로컬 (LANDSCAPE & LOCAL)</option>
+                            <option value="city">도시 & 건축 (CITY & ARCHITECTURE)</option>
+                            <option value="collaboration">비즈니스 & 디자인 (COLLABORATION & DESIGN)</option>
+                            <option value="space">공간 & 스테이 (SPACE & STAY)</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="edit-img-file">사진 파일 업로드</label>
+                        <input type="file" id="edit-img-file" accept="image/*">
+                        <input type="hidden" id="edit-img-url">
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="edit-img-title">작품 제목</label>
+                        <input type="text" id="edit-img-title" placeholder="예: 순천만 갈대숲의 낙조">
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="edit-img-desc">상세 설명 (큐레이터 노트)</label>
+                        <textarea id="edit-img-desc" rows="3" placeholder="사진에 담긴 장소의 정조나 지자체 배포 관련 설명 기재"></textarea>
+                    </div>
+                    <div class="admin-form-actions">
+                        <button class="btn btn-primary" id="btn-save-image">저장하기</button>
+                        <button class="btn btn-danger" id="btn-delete-image" style="display: none;">삭제하기</button>
+                        <button class="btn btn-secondary" id="btn-cancel-edit">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- [Section 3: Identity & Value] 경험의 깊이 (작가 철학 이식 - 중앙 정렬 에디토리얼) -->
+        <section id="philosophy-section" class="philosophy-section section-padding">
+            <div class="container philosophy-centered-layout">
+                <span class="section-tag fade-in-up">02 / ARCHIVE PHILOSOPHY</span>
+                <h2 class="philosophy-centered-title fade-in-up">"여행의 가치는 경험의 넓이가 아닌,<br>깊이에서 나옵니다."</h2>
+                <div class="philosophy-text-content fade-in-up">
+                    <p class="philosophy-desc">
+                        단순히 수많은 장소를 빠르게 스쳐 지나가는 일회성 홍보를 지양합니다. 하나의 로컬, 하나의 관광지가 품고 있는 고유한 역사와 감정, 그리고 시간의 흐름에 따라 변화하는 풍경을 다각도의 렌즈 프레임으로 깊이 있게 큐레이팅합니다.
+                    </p>
+                    <p class="philosophy-desc-sub">
+                        각 공간이 가진 본연의 매력을 입체적이고 진정성 있게 담아내는 것이 제가 추구하는 기록 철학이자, 로컬 브랜딩을 성공으로 이끄는 확실한 차별점입니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- [Section 4: Trust & Offering] B2B 제공 가치 (함께할 수 있는 협업 제안) -->
+        <section id="offerings-section" class="offerings-section section-padding bg-neutral">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">03 / B2B VALUE OFFERINGS</span>
+                    <h2 class="section-title">함께할 수 있는 협업 제안</h2>
+                    <p class="section-subtitle">로컬의 매력을 극대화하고 소셜 파급력을 더하는 정지훈 작가만의 두 가지 협업 솔루션입니다.</p>
+                </div>
+                
+                <div class="offerings-grid">
+                    <!-- Offering Card 1 -->
+                    <div class="offering-card fade-in-up">
+                        <div class="offering-icon-wrapper">
+                            <svg viewBox="0 0 24 24" class="offering-icon" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3>Type A. 로컬 크리에이티브 콘텐츠 패키지</h3>
+                        <div class="offering-details">
+                            <div class="offering-text-group">
+                                <strong>내용</strong>
+                                <span class="offering-desc-text">인스타그램 채널에 캐러셀, 숏폼(릴스)을 활용하여 대중의 시선을 사로잡는 로컬 여행 코스를 기획/제작합니다.</span>
+                            </div>
+                            <div class="offering-text-group">
+                                <strong>기대 효과</strong>
+                                <span class="offering-desc-text">단순히 보는 사진을 넘어, '저장'과 '공유'를 유도하는 큐레이션 콘텐츠로 우리 지역 및 공간의 자연스러운 온라인 확산(바이럴)을 만듭니다.</span>
+                            </div>
+                            <div class="offering-text-group">
+                                <strong>권장 타겟</strong>
+                                <span class="offering-desc-text">지자체 공식 SNS, 관광벤처, 감성 숙소 및 로컬 F&B 브랜드</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Offering Card 2: 고화질 관광지 사진 지원 전면 소구 -->
+                    <div class="offering-card fade-in-up">
+                        <div class="offering-icon-wrapper">
+                            <svg viewBox="0 0 24 24" class="offering-icon" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                <circle cx="12" cy="13" r="4"/>
+                            </svg>
+                        </div>
+                        <h3>Type B. 고화질 로컬 라이브러리 공급</h3>
+                        <div class="offering-details">
+                            <div class="offering-text-group">
+                                <strong>내용</strong>
+                                <span class="offering-desc-text">한국관광공사 사진기자단 및 다양한 관광 사진 경험으로 최고 품질의 컷으로 촬영하고 공급합니다.</span>
+                            </div>
+                            <div class="offering-text-group">
+                                <strong>기대 효과</strong>
+                                <span class="offering-desc-text">지자체 홍보 웹진, 오프라인 브로셔, 정부 공식 채널 등에 저작권 분쟁 걱정 없이 즉각 활용할 수 있는 안전하고 완성도 높은 비주얼 자산을 구축해 드립니다.</span>
+                            </div>
+                            <div class="offering-text-group">
+                                <strong>권장 타겟</strong>
+                                <span class="offering-desc-text">지자체 및 공공기관 홍보 담당자, 여행 전문 잡지사 및 플랫폼 기업</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [Section 5: CTA] 전환 유도 (B2B 협업 문의 폼 연동) -->
+        <section id="contact-section" class="contact-section section-padding">
+            <div class="container">
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <span class="section-tag">04 / CONTACT FORM (문의 가이드)</span>
+                        <h2 class="section-title">가치 있는 여정의 시작</h2>
+                        <p class="contact-desc">
+                            프로젝트의 성격에 따라 하단의 양식을 작성해 주시면 24시간 이내에 제안서와 함께 연락드리겠습니다.
+                        </p>
+                        <p class="contact-required-notice">
+                            * 필수 기입 항목 : 기관/업체명, 담당자 연락처, 희망 작업 일정 및 지역, 의뢰 유형 선택(Type A/Type B)
+                        </p>
+                    </div>
+                    
+                    <!-- B2B 문의 폼 구조 -->
+                    <form id="contact-inquiry-form" class="contact-form-container">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-company">기관 / 업체명 *</label>
+                                <input type="text" id="contact-company" placeholder="예: 한국관광공사 / OOO 호텔" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone">담당자 연락처 *</label>
+                                <input type="text" id="contact-phone" placeholder="예: 홍길동 팀장 (010-0000-0000)" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-schedule">희망 작업 일정 및 지역 *</label>
+                                <input type="text" id="contact-schedule" placeholder="예: 2026년 9월 중순 / 전남 여수 일대" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-type">의뢰 유형 선택 *</label>
+                                <select id="contact-type" required>
+                                    <option value="" disabled selected>유형을 선택해 주세요</option>
+                                    <option value="type-a">Type A. 로컬 크리에이티브 콘텐츠 패키지</option>
+                                    <option value="type-b">Type B. 고화질 로컬 라이브러리 공급</option>
+                                    <option value="other">기타 비즈니스 협업 문의</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">상세 의뢰 내용 (선택)</label>
+                            <textarea id="contact-message" rows="4" placeholder="작업 범위, 타겟 대상 등 추가적인 상세 요청 사항을 기입해 주세요"></textarea>
+                        </div>
+                        <div style="text-align: center;">
+                            <button type="submit" class="btn-submit-contact">협업 문의 메일 보내기</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 JIHOON JUNG. All Rights Reserved.</p>
+                <p class="footer-subtext">Curating the memories of travel through light, depth of perspective, and local archiving.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+</body>
+</html>
