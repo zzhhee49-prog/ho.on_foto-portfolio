@@ -92,20 +92,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. 갤러리 아카이브 데이터베이스 & 로컬스토리지 CRUD 관리 로직
     // ==========================================================================
     const DEFAULT_GALLERY_DATA = [
-        { id: 'land-1', category: 'landscape', url: 'assets/images/landscape_add1.jpg', title: '칠산바다 갯벌의 포구', desc: '갯벌 위에 정박한 고기잡이 배들과 바다 위 인도교가 자아내는 평화로운 어촌 정취.' },
-        { id: 'land-2', category: 'landscape', url: 'assets/images/landscape_add2.jpg', title: '순천만 칠면초 군락의 붉은 융단', desc: '순천만 갯벌을 붉게물들인 칠면초의 생명력 넘치는 대자연 풍경.' },
-        { id: 'land-3', category: 'landscape', url: 'assets/images/landscape.jpg', title: '잔디 언덕과 나홀로 나무', desc: '경이로운 대자연 속에 외로이 서 있는 생명력의 미학, 올림픽공원.' },
-        { id: 'land-4', category: 'landscape', url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80', title: '안개 낀 아침 강가', desc: '산허리를 감싸며 흐르는 아침 서리와 빛이 교차하는 평화로운 정취.' },
-        { id: 'land-5', category: 'landscape', url: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80', title: '산맥의 웅장한 능선', desc: '구름 위로 솟구쳐 오른 자연 고유의 선과 깊이 있는 실루엣.' },
-        { id: 'city-1', category: 'city', url: 'assets/images/city_add1.jpg', title: '뚝섬 한강공원에서 바라본 롯데타워 야경', desc: '한강의 물결 너머로 화려하게 솟아오른 랜드마크 롯데타워와 강변북로의 궤적.' },
-        { id: 'city-2', category: 'city', url: 'assets/images/city_add2.jpg', title: '동호대교의 노을과 서울 N타워', desc: '노을 지는 한강의 주황빛 물결 위를 가로지르는 동호대교와 남산타워 실루엣.' },
-        { id: 'city-3', category: 'city', url: 'assets/images/city.jpg', title: '목포대교의 황혼과 도심 야경', desc: '서해안 유달산 자락에서 바라본 주황빛 낙조와 목포대교의 화려한 조화.' },
-        { id: 'city-4', category: 'city', url: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80', title: '골목길의 고요한 가로등', desc: '오래된 도시 골목 구석구석이 품고 있는 노란빛 가로등의 감성.' },
-        { id: 'city-5', category: 'city', url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80', title: '기하학적인 도심 건축물', desc: '도시 속 차가운 현대적 구조물들 사이에서 발견한 조형미의 시선.' },
-        { id: 'col-1', category: 'collaboration', url: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80', title: '전통 고택 아카이브 화보', desc: '한국관광공사 사진기자 이력으로 제작한 공공 배포용 로컬 기와 가옥 명소 비주얼.' },
-        { id: 'col-2', category: 'collaboration', url: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80', title: '지자체 배포용 자연 관광지 컷', desc: '지역 활성화 책자 및 SNS 채널에 즉각 라이선스 프리로 매핑 가능한 고화질 로컬 소스.' },
-        { id: 'space-1', category: 'space', url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80', title: '고요한 해변의 공간감', desc: '자연이 주는 가장 넓은 전시장, 바다가 자아내는 평화로운 고유 공간.' },
-        { id: 'space-2', category: 'space', url: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80', title: '오후의 사색이 깃든 나무 숲', desc: '빛이 갈래갈래 찢어지며 쏟아지는 감성적인 숲 속 로케이션.' }
+        { id: 'land-1', category: 'landscape', url: 'assets/images/landscape_add1.jpg', title: '(국가유산청 협업) 순천 용두항 갯벌', desc: '갯벌 위에 정박한 고기잡이 배들과 바다 위 인도교가 자아내는 평화로운 어촌 정취.' },
+        { id: 'land-2', category: 'landscape', url: 'assets/images/landscape_add2.jpg', title: '무안 황토갯벌랜드 칠면초', desc: '무안 해안가를 온통 붉게 물들인 칠면초의 생명력 넘치는 대자연 풍경.' },
+        { id: 'land-3', category: 'landscape', url: 'assets/images/landscape.jpg', title: '해남 산이정원 동백나무', desc: '남도의 계절감과 초록빛 생명력이 가득 내려앉은 정원의 동백나무 정취.' },
+        { id: 'land-4', category: 'landscape', url: 'assets/images/landscape_add3.jpg', title: '(국가유산청) 순천갯벌 게', desc: '낙조 빛 아래 순천만 갯벌 위에서 포착한 작은 게의 생동감 넘치는 움직임.' },
+        { id: 'land-5', category: 'landscape', url: 'assets/images/landscape_add4.jpg', title: '(국가유산청) 순천보성갯벌 은하수', desc: '순천과 보성을 잇는 밤하늘 아래 광활하게 펼쳐진 은하수와 갯벌의 신비로운 밤 정조.' },
+        { id: 'land-6', category: 'landscape', url: 'assets/images/landscape_add5.jpg', title: '(국가유산청) 순천 와온해변', desc: '황금빛 일몰이 내려앉는 순천 와온해변의 나지막한 섬과 넓은 물결 풍경.' },
+        { id: 'land-7', category: 'landscape', url: 'assets/images/landscape_add6.jpg', title: '영암 상대포역사공원', desc: '영암 상대포역사공원의 정자와 봄꽃이 물결 위 데칼코마니처럼 반사된 고즈넉한 봄날.' },
+        { id: 'land-8', category: 'landscape', url: 'assets/images/landscape_add7.jpg', title: '목포 도시 해무', desc: '아침 해무에 휩싸여 구름 위로 솟구쳐 오른 듯한 목포 도심 건축물들의 신비로운 실루엣.' },
+        { id: 'land-9', category: 'landscape', url: 'assets/images/landscape_add8.jpg', title: '해남 산이정원', desc: '해남 산이정원의 광활한 잔디 광장 위로 나뭇가지 사이 쏟아지는 눈부신 아침 햇살과 이국적인 조형물.' },
+        { id: 'city-1', category: 'city', url: 'assets/images/city_add1.jpg', title: '성수구름다리 야경', desc: '성수동 구름다리 위에서 포착한 도로 위 차량 불빛 궤적과 도심 야경.' },
+        { id: 'city-2', category: 'city', url: 'assets/images/city_add2.jpg', title: '성수구름다리 노을', desc: '황홀한 낙조가 내려앉은 하늘과 한강변 도로가 만드는 주황빛 실루엣.' },
+        { id: 'city-3', category: 'city', url: 'assets/images/city.jpg', title: '목포 도심 야경', desc: '유달산 자락에서 내려다본 불 켜진 목포 시가지와 교량의 아름다운 밤 풍경.' },
+        { id: 'city-4', category: 'city', url: 'assets/images/city_add3.jpg', title: '목포 원도심 야경', desc: '목포 원도심 너머 목포항 국제여객터미널과 바다의 푸른 밤 정취가 담긴 시가지 풍경.' },
+        { id: 'city-5', category: 'city', url: 'assets/images/city_add4.jpg', title: '조선내화 목포공장', desc: '목포의 산업 역사 흔적을 고스란히 담고 있는 조선내화 옛 공장 부지의 낡은 구조물과 녹슨 철골 철길.' },
+        { id: 'city-6', category: 'city', url: 'assets/images/city_add5.jpg', title: '목포 근대역사관 1관', desc: '붉은 벽돌의 웅장한 외관이 특징인 목포 근대역사관 1관 전경과 국도 1,2호선 기점 표지석.' },
+        { id: 'city-7', category: 'city', url: 'assets/images/city_add6.jpg', title: '서울로7017', desc: '도심 속 공중 정원 서울로 7017 위에서 사색하는 사람과 빌딩숲 사이 멀리 보이는 남산타워.' },
+        { id: 'city-8', category: 'city', url: 'assets/images/city_add7.jpg', title: '청계천', desc: '도심 빌딩숲 아래 흐르는 청계천 주변 야외 도서관에 둘러앉아 책을 읽고 사색하는 시민들의 일상.' },
+        { id: 'col-1', category: 'collaboration', url: 'assets/images/col_add1.jpg', title: '목포 도시 야경', desc: '목포시 공식 관광 홍보 및 잡지 지면용으로 유달산 조망에서 촬영한 환상적인 골든아워 구도심 전경.' },
+        { id: 'col-2', category: 'collaboration', url: 'assets/images/col_add2.jpg', title: '(화순관광 청년PD) 남산공원', desc: '화순관광 청년PD 프로젝트 일환으로 진행된 수국 정원의 생동감 넘치는 여름 풍경 화보.' }
     ];
 
     const CATEGORY_DISPLAY_NAMES = {
@@ -116,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     let galleryDb = [];
-    const storageKey = 'jihoon_portfolio_gallery_db_v4'; // 플랫 데이터 포맷 이전을 위해 버전을 v4로 변경
+    const storageKey = 'jihoon_portfolio_gallery_db_v10'; // 신규 해남 산이정원 사진 갱신을 위해 스토리지 버전을 v10로 승격
     
     function loadGalleryDb() {
         const stored = localStorage.getItem(storageKey);
@@ -173,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryGrid = document.getElementById('gallery-grid');
     const filterTabs = document.querySelectorAll('.filter-tab');
     let currentFilter = 'all';
-    let isAdminModeActive = false;
 
     // 라이트박스 및 모달 제어용 변수
     const lightboxModal = document.getElementById('gallery-lightbox');
@@ -189,40 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeList = [];
     let activeSlideIndex = 0;
 
-    // 관리자 에디터 전용 모달 DOM 객체
-    const adminEditModal = document.getElementById('admin-edit-modal');
-    const adminModalClose = document.getElementById('admin-modal-close');
-    const adminModalTitle = document.getElementById('admin-modal-title');
-    const editImgCategory = document.getElementById('edit-img-category');
-    const editImgFile = document.getElementById('edit-img-file');
-    const editImgUrl = document.getElementById('edit-img-url');
-    const editImgTitle = document.getElementById('edit-img-title');
-    const editImgDesc = document.getElementById('edit-img-desc');
-    const btnSaveImage = document.getElementById('btn-save-image');
-    const btnDeleteImage = document.getElementById('btn-delete-image');
-    const btnCancelEdit = document.getElementById('btn-cancel-edit');
-
-    let editingItemId = null;
-
-    if (editImgFile && editImgUrl) {
-        editImgFile.addEventListener('change', (e) => {
-            const files = e.currentTarget.files;
-            if (files && files.length > 0) {
-                const file = files[0];
-                if (!file.type.startsWith('image/')) {
-                    alert('이미지 파일만 등록할 수 있습니다.');
-                    e.currentTarget.value = '';
-                    return;
-                }
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onloadend = () => {
-                    editImgUrl.value = reader.result;
-                };
-            }
-        });
-    }
-
     function renderGallery() {
         if (!galleryGrid) return;
         galleryGrid.innerHTML = '';
@@ -231,27 +201,21 @@ document.addEventListener('DOMContentLoaded', () => {
             return currentFilter === 'all' ? true : item.category === currentFilter;
         });
 
-        if (isAdminModeActive) {
-            const addPlaceholder = document.createElement('div');
-            addPlaceholder.className = 'gallery-grid-item add-card-placeholder fade-in-up active';
-            addPlaceholder.innerHTML = `
-                <svg viewBox="0 0 24 24" class="add-card-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-                <span class="add-card-text">새 작품 등록</span>
+        if (filteredItems.length === 0) {
+            const emptyState = document.createElement('div');
+            emptyState.className = 'gallery-empty-state';
+            emptyState.innerHTML = `
+                <span class="empty-icon">✦</span>
+                <h4 class="empty-title">준비 중인 아카이브</h4>
+                <p class="empty-desc">해당 카테고리의 프로젝트 화보는 현재 기획 단계에 있습니다. 하단의 협업 문의 양식을 기입해 주시면 관련 제안 자료와 포트폴리오 미디어 키트를 송부해 드리겠습니다.</p>
             `;
-            addPlaceholder.addEventListener('click', () => openAdminModal(null));
-            galleryGrid.appendChild(addPlaceholder);
+            galleryGrid.appendChild(emptyState);
+            return;
         }
 
         filteredItems.forEach((item, index) => {
             const card = document.createElement('div');
             card.className = 'gallery-grid-item fade-in-up active';
-            if (isAdminModeActive) {
-                card.classList.add('admin-draggable');
-                card.setAttribute('draggable', 'true');
-            }
             card.setAttribute('data-id', item.id);
             card.setAttribute('data-index', index);
 
@@ -264,56 +228,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
-            if (isAdminModeActive) {
-                const actionContainer = document.createElement('div');
-                actionContainer.className = 'grid-item-actions';
-
-                const editBtn = document.createElement('button');
-                editBtn.className = 'grid-action-btn edit-btn';
-                editBtn.title = '수정';
-                editBtn.innerHTML = `
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                        <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                    </svg>
-                `;
-                editBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    openAdminModal(item.id);
-                });
-
-                const deleteBtn = document.createElement('button');
-                deleteBtn.className = 'grid-action-btn delete-btn';
-                deleteBtn.title = '삭제';
-                deleteBtn.innerHTML = `
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                    </svg>
-                `;
-                deleteBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    deleteArchiveItem(item.id);
-                });
-
-                actionContainer.appendChild(editBtn);
-                actionContainer.appendChild(deleteBtn);
-                card.appendChild(actionContainer);
-            }
-
             card.addEventListener('click', () => {
-                if (!isAdminModeActive) {
-                    openLightbox(item.id, filteredItems);
-                }
+                openLightbox(item.id, filteredItems);
             });
-
-            if (isAdminModeActive) {
-                card.addEventListener('dragstart', handleDragStart);
-                card.addEventListener('dragover', handleDragOver);
-                card.addEventListener('dragleave', handleDragLeave);
-                card.addEventListener('drop', handleDrop);
-                card.addEventListener('dragend', handleDragEnd);
-            }
 
             galleryGrid.appendChild(card);
         });
@@ -327,60 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
             renderGallery();
         });
     });
-
-    let dragSrcId = null;
-
-    function handleDragStart(e) {
-        const target = e.currentTarget;
-        target.classList.add('dragging');
-        dragSrcId = target.getAttribute('data-id');
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('text/plain', dragSrcId);
-    }
-
-    function handleDragOver(e) {
-        e.preventDefault();
-        e.currentTarget.classList.add('drag-over');
-        e.dataTransfer.dropEffect = 'move';
-        return false;
-    }
-
-    function handleDragLeave(e) {
-        e.currentTarget.classList.remove('drag-over');
-    }
-
-    function handleDragEnd(e) {
-        e.currentTarget.classList.remove('dragging');
-        const items = document.querySelectorAll('.gallery-grid-item');
-        items.forEach(item => {
-            item.classList.remove('drag-over');
-            item.classList.remove('dragging');
-        });
-    }
-
-    function handleDrop(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const target = e.currentTarget;
-        target.classList.remove('drag-over');
-        
-        const targetId = target.getAttribute('data-id');
-        const sourceId = (dragSrcId !== null) ? dragSrcId : e.dataTransfer.getData('text/plain');
-        
-        if (!sourceId || sourceId === targetId) return;
-        
-        const sourceIndexInDb = galleryDb.findIndex(item => item.id === sourceId);
-        const targetIndexInDb = galleryDb.findIndex(item => item.id === targetId);
-        
-        if (sourceIndexInDb === -1 || targetIndexInDb === -1) return;
-        
-        const [movedItem] = galleryDb.splice(sourceIndexInDb, 1);
-        galleryDb.splice(targetIndexInDb, 0, movedItem);
-        
-        saveGalleryDb();
-        renderGallery();
-    }
 
     // ==========================================================================
     // 5. 작품 라이트박스 팝업 (Pure Reader Viewer)
@@ -472,123 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function openAdminModal(itemId) {
-        editingItemId = itemId;
-        
-        if (!itemId) {
-            adminModalTitle.textContent = '새로운 작품 등록';
-            editImgCategory.value = currentFilter !== 'all' ? currentFilter : 'landscape';
-            editImgFile.value = '';
-            editImgUrl.value = '';
-            editImgTitle.value = '';
-            editImgDesc.value = '';
-            btnDeleteImage.style.display = 'none';
-        } else {
-            const item = galleryDb.find(i => i.id === itemId);
-            if (!item) return;
 
-            adminModalTitle.textContent = '작품 정보 편집';
-            editImgCategory.value = item.category;
-            editImgFile.value = '';
-            editImgUrl.value = item.url;
-            editImgTitle.value = item.title;
-            editImgDesc.value = item.desc;
-            btnDeleteImage.style.display = 'inline-block';
-        }
-
-        if (adminEditModal) {
-            adminEditModal.style.display = 'flex';
-            adminEditModal.setAttribute('aria-hidden', 'false');
-        }
-    }
-
-    function closeAdminModal() {
-        if (adminEditModal) {
-            adminEditModal.style.display = 'none';
-            adminEditModal.setAttribute('aria-hidden', 'true');
-        }
-        editingItemId = null;
-    }
-
-    if (adminModalClose) {
-        adminModalClose.addEventListener('click', closeAdminModal);
-    }
-    if (btnCancelEdit) {
-        btnCancelEdit.addEventListener('click', closeAdminModal);
-    }
-    if (adminEditModal) {
-        adminEditModal.addEventListener('click', (e) => {
-            if (e.target === adminEditModal) {
-                closeAdminModal();
-            }
-        });
-    }
-
-    if (btnSaveImage) {
-        btnSaveImage.addEventListener('click', () => {
-            const categoryVal = editImgCategory.value;
-            const urlVal = editImgUrl.value.trim();
-            const titleVal = editImgTitle.value.trim();
-            const descVal = editImgDesc.value.trim();
-
-            if (!urlVal) {
-                alert('사진 파일을 선택하여 업로드해 주세요.');
-                return;
-            }
-            if (!titleVal) {
-                alert('작품 제목을 입력해 주세요.');
-                return;
-            }
-
-            if (!editingItemId) {
-                const newItem = {
-                    id: 'item-' + Date.now(),
-                    category: categoryVal,
-                    url: urlVal,
-                    title: titleVal,
-                    desc: descVal
-                };
-                galleryDb.unshift(newItem);
-                alert('새 작품이 갤러리에 성공적으로 등록되었습니다.');
-            } else {
-                const item = galleryDb.find(i => i.id === editingItemId);
-                if (item) {
-                    item.category = categoryVal;
-                    item.url = urlVal;
-                    item.title = titleVal;
-                    item.desc = descVal;
-                }
-                alert('작품 정보가 정상적으로 수정되었습니다.');
-            }
-
-            saveGalleryDb();
-            closeAdminModal();
-            renderGallery();
-        });
-    }
-
-    function deleteArchiveItem(itemId) {
-        if (!confirm('정말로 이 작품을 아카이브 갤러리에서 삭제하시겠습니까?')) {
-            return;
-        }
-
-        const idx = galleryDb.findIndex(item => item.id === itemId);
-        if (idx !== -1) {
-            galleryDb.splice(idx, 1);
-            saveGalleryDb();
-            renderGallery();
-            alert('작품이 정상적으로 삭제되었습니다.');
-        }
-    }
-
-    if (btnDeleteImage) {
-        btnDeleteImage.addEventListener('click', () => {
-            if (editingItemId) {
-                deleteArchiveItem(editingItemId);
-                closeAdminModal();
-            }
-        });
-    }
 
     // ==========================================================================
     // 8. B2B 협업 문의 폼 메일 전송 연동 (mailto)

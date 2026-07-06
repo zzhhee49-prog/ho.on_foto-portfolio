@@ -16,6 +16,9 @@
 </head>
 <body class="museum-theme">
 
+    <!-- 스크롤 진행 표시 바 -->
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
+
     <!-- Header / Navigation -->
     <header id="main-header">
         <div class="header-container">
@@ -109,17 +112,6 @@
                         <h2 class="section-title">여행의 기억</h2>
                         <p class="section-subtitle"><strong>시선을 머물게 하는 로컬 콘텐츠의 시작</strong><br>전국 각지의 로컬 가이드 갤러리입니다. 고품질 비주얼 아카이브를 확인해 보세요.</p>
                     </div>
-                    
-                    <!-- 관리자 모드 토글 버튼 -->
-                    <div class="admin-control-panel">
-                        <button class="admin-toggle-btn" id="admin-mode-toggle" aria-label="관리자 모드 활성화">
-                            <svg viewBox="0 0 24 24" width="14" height="14" class="admin-icon">
-                                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                            </svg>
-                            <span>관리자 편집 모드</span>
-                        </button>
-                    </div>
                 </div>
 
                 <!-- 실시간 필터링 탭 바 -->
@@ -170,48 +162,6 @@
             </div>
         </div>
 
-        <!-- 관리자 전용 독립형 작품 등록/수정용 팝업 폼 모달 -->
-        <div class="admin-modal-backdrop" id="admin-edit-modal" role="dialog" aria-hidden="true" style="display: none;">
-            <div class="admin-modal-container">
-                <button class="admin-modal-close" id="admin-modal-close" aria-label="닫기">
-                    <svg viewBox="0 0 24 24" width="20" height="20">
-                        <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="1.5"></line>
-                        <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="1.5"></line>
-                    </svg>
-                </button>
-                <h4 class="admin-modal-title" id="admin-modal-title">작품 정보 편집</h4>
-                
-                <div class="admin-edit-panel-body">
-                    <div class="admin-form-group">
-                        <label for="edit-img-category">카테고리 분류</label>
-                        <select id="edit-img-category">
-                            <option value="landscape">자연 & 로컬 (LANDSCAPE & LOCAL)</option>
-                            <option value="city">도시 & 건축 (CITY & ARCHITECTURE)</option>
-                            <option value="collaboration">비즈니스 & 디자인 (COLLABORATION & DESIGN)</option>
-                            <option value="space">공간 & 스테이 (SPACE & STAY)</option>
-                        </select>
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="edit-img-file">사진 파일 업로드</label>
-                        <input type="file" id="edit-img-file" accept="image/*">
-                        <input type="hidden" id="edit-img-url">
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="edit-img-title">작품 제목</label>
-                        <input type="text" id="edit-img-title" placeholder="예: 순천만 갈대숲의 낙조">
-                    </div>
-                    <div class="admin-form-group">
-                        <label for="edit-img-desc">상세 설명 (큐레이터 노트)</label>
-                        <textarea id="edit-img-desc" rows="3" placeholder="사진에 담긴 장소의 정조나 지자체 배포 관련 설명 기재"></textarea>
-                    </div>
-                    <div class="admin-form-actions">
-                        <button class="btn btn-primary" id="btn-save-image">저장하기</button>
-                        <button class="btn btn-danger" id="btn-delete-image" style="display: none;">삭제하기</button>
-                        <button class="btn btn-secondary" id="btn-cancel-edit">취소</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- [Section 3: Identity & Value] 경험의 깊이 (작가 철학 이식 - 중앙 정렬 에디토리얼) -->
         <section id="philosophy-section" class="philosophy-section section-padding">
@@ -357,6 +307,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- 맨 위로 이동 버튼 -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="맨 위로 이동">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.8" fill="none">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
 
     <!-- Custom JS -->
     <script src="main.js"></script>

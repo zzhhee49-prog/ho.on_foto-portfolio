@@ -443,7 +443,7 @@ button, input, select, textarea {
 .gallery-feed-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 16px;
     margin-top: 20px;
 }
 
@@ -451,13 +451,13 @@ button, input, select, textarea {
 @media (max-width: 991px) {
     .gallery-feed-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 12px;
     }
 }
 @media (max-width: 575px) {
     .gallery-feed-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 12px;
     }
 }
 
@@ -682,7 +682,7 @@ button, input, select, textarea {
 
 .lightbox-slider-container {
     width: 100%;
-    max-width: 900px;
+    max-width: 1250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -700,22 +700,24 @@ button, input, select, textarea {
 
 .slider-image-box {
     background-color: var(--color-bg-alt);
-    aspect-ratio: 4 / 3;
     overflow: hidden;
     border-radius: 2px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.02);
     border: 1px solid var(--color-border);
-    width: 100%;
-    max-width: 650px;
+    max-width: 950px;
+    max-height: 88vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .slider-image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: block;
+    max-width: 100%;
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -1402,85 +1404,45 @@ footer {
 }
 
 /* ==========================================================================
-   관리자 전용 작품 에디터 모달 (Admin Edit Modal)
+   빈 카테고리 엠프티 스테이트 안내 카드 (Empty State)
    ========================================================================== */
-.admin-modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(29, 27, 25, 0.6);
-    backdrop-filter: blur(4px);
-    z-index: 3000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-.admin-modal-container {
-    width: 100%;
-    max-width: 520px;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
-    position: relative;
-    padding: 40px;
-    animation: adminModalReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes adminModalReveal {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.admin-modal-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: var(--color-text-muted);
-    transition: var(--transition-quick);
-}
-
-.admin-modal-close:hover {
-    color: var(--color-text);
-}
-
-.admin-modal-title {
-    font-family: var(--font-serif);
-    font-size: 1.35rem;
-    font-weight: 400;
-    color: var(--color-text);
-    margin-bottom: 25px;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 12px;
-}
-
-.admin-edit-panel-body {
+.gallery-empty-state {
+    grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 20px;
+    text-align: center;
+    background-color: var(--color-bg-alt);
+    border: 1px dashed var(--color-border);
+    border-radius: 2px;
+    width: 100%;
+    margin: 20px 0;
 }
 
-.admin-edit-panel-body select {
-    padding: 10px 12px;
-    border: 1px solid var(--color-border);
-    border-radius: 2px;
-    font-size: 0.88rem;
-    background-color: var(--color-bg);
+.gallery-empty-state .empty-icon {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    margin-bottom: 15px;
+    display: block;
+    line-height: 1;
+}
+
+.gallery-empty-state .empty-title {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    margin: 0 0 10px 0;
     color: var(--color-text);
-    cursor: pointer;
+    letter-spacing: 0.05em;
+}
+
+.gallery-empty-state .empty-desc {
+    font-size: 0.84rem;
+    color: var(--color-text-muted);
+    max-width: 440px;
+    line-height: 1.7;
+    word-break: keep-all;
+    margin: 0;
 }
