@@ -338,10 +338,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ==========================================================================
-    // 8. B2B 협업 문의 폼 메일 전송 연동 (mailto)
+    // 8. B2B 협업 문의 폼 Web3Forms API 연동 (자동 메일 전송)
     // ==========================================================================
     const contactForm = document.getElementById('contact-inquiry-form');
-    if (contactForm) {
+    const submitBtn = document.getElementById('btn-submit-contact');
+    const feedbackDiv = document.getElementById('form-feedback');
+
+    if (contactForm && submitBtn && feedbackDiv) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
@@ -356,30 +359,61 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const emailReceiver = 'zzhhee@naver.com';
-            const subject = encodeURIComponent(`[로컬 아카이빙 협업 의뢰] ${company} - 담당자 문의`);
-            
-            let bodyText = `안녕하세요 정지훈 작가님,\n\n포트폴리오를 보고 협업을 의뢰하고자 문의 남깁니다.\n\n`;
-            bodyText += `■ 기관/업체명: ${company}\n`;
-            bodyText += `■ 담당자 연락처: ${contact}\n`;
-            bodyText += `■ 희망 작업 일정 및 지역: ${schedule}\n`;
-            
             let typeLabel = '';
             if (type === 'type-a') typeLabel = 'Type A. 로컬 크리에이티브 콘텐츠 패키지';
             else if (type === 'type-b') typeLabel = 'Type B. 고화질 로컬 라이브러리 공급';
             else typeLabel = '기타 비즈니스 협업 문의';
-            
-            bodyText += `■ 의뢰 유형: ${typeLabel}\n\n`;
-            if (message) {
-                bodyText += `■ 상세 문의 및 요청 내용:\n${message}\n\n`;
-            }
-            bodyText += `확인 후 24시간 이내에 제안서와 함께 연락주시기 바랍니다.\n감사합니다.`;
 
-            const body = encodeURIComponent(bodyText);
-            const mailtoUrl = `mailto:${emailReceiver}?subject=${subject}&body=${body}`;
-            
-            // 메일 전송 창 열기
-            window.location.href = mailtoUrl;
+            // 로딩 상태 UI 전환
+            submitBtn.disabled = true;
+            submitBtn.classList.add('loading');
+            submitBtn.textContent = '전송 중';
+            feedbackDiv.className = 'form-feedback-message';
+            feedbackDiv.style.display = 'none';
+
+            // Web3Forms 전송 데이터 생성
+            const payload = {
+                access_key: '39687b33-4bb7-45fc-8e6e-ea354d6c19a7',
+                subject: `[로컬 아카이빙 협뢰] ${company}`,
+                from_name: '포트폴리오 B2B 문의',
+                '기관/업체명': company,
+                '담당자 연락처': contact,
+                '희망 일정 및 지역': schedule,
+                '의뢰 유형': typeLabel,
+                '상세 의뢰 내용': message || '없음'
+            };
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    feedbackDiv.textContent = '✓ 문의가 성공적으로 전송되었습니다. 확인 후 24시간 이내에 제안서와 함께 연락드리겠습니다.';
+                    feedbackDiv.classList.add('success');
+                    contactForm.reset();
+                } else {
+                    console.error(response);
+                    feedbackDiv.textContent = json.message || '메일 발송 도중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.';
+                    feedbackDiv.classList.add('error');
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+                feedbackDiv.textContent = '네트워크 오류가 발생했습니다. 인터넷 연결을 확인하고 다시 시도해 주세요.';
+                feedbackDiv.classList.add('error');
+            })
+            .finally(() => {
+                // UI 원복
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('loading');
+                submitBtn.textContent = '협업 문의 메일 보내기';
+            });
         });
     }
 
